@@ -24,3 +24,5 @@
 /behat.yml
 /phpunit.xml
 /phpspec.yml
+.idea/*
+.idea

@@ -2,6 +2,10 @@
 
 namespace AdfabBundle\Entity;
 
+/**
+ * Interface AchievementUserInterface
+ * @package AdfabBundle\Entity
+ */
 interface AchievementUserInterface
 {
     /**

@@ -3,15 +3,16 @@
 namespace AdfabBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Sylius\Component\User\Model\User as BaseUser;
+use Sylius\Component\Core\Model\ShopUser as BaseUser;
 
+/**
+ * Class User
+ * @package AdfabBundle\Entity
+ */
 class User extends BaseUser implements AchievementUserInterface
 {
     /**
      * @var Achievement[]
-     *
-     * @ORM\OneToMany(targetEntity="AdfabBundle\Entity\Achievement", mappedBy="user")
-     * @ORM\OrderBy({"earnedAt" = "DESC"})
      */
     private $achievements;
 

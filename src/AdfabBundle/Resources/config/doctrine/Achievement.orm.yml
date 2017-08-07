@@ -1,0 +1,22 @@
+AdfabBundle\Entity\Achievement:
+    type: entity
+    table: adfab_achievement
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            nullable: false
+        earnedAt:
+            type: datetime
+            nullable: false
+    manyToOne:
+        user:
+            targetEntity: AdfabBundle\Entity\User
+            inversedBy: achievements
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

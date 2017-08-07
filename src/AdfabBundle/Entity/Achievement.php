@@ -2,43 +2,29 @@
 
 namespace AdfabBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
- * @ORM\Entity
- * @ORM\HasLifecycleCallbacks()
+ * Class Achievement
+ * @package AdfabBundle\Entity
  */
 class Achievement
 {
     /**
      * @var string
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Id
-     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(type="datetime")
      */
     private $earnedAt;
 
     /**
-     * @var AchievementUserInterface
-     *
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="AchievementUserInterface", inversedBy="achievements")
+     * @var User
      */
     private $user;
 
