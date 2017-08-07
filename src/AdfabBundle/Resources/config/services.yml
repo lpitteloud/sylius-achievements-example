@@ -1,0 +1,11 @@
+services:
+    adfab.order.post_complete:
+        class: AdfabBundle\EventListener\PostCompleteOrderListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.order.post_complete, method: unlockAchievement }
+        arguments: [ '@doctrine.orm.entity_manager', '%adfab.achievements.order.casual_shopper.key%', '%adfab.achievements.order.fashionista.key%', '%adfab.achievements.order.serial_shopper.key%' ]
+    adfab.customer.post_register:
+        class: AdfabBundle\EventListener\PostRegisterCustomerListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.customer.post_register, method: unlockAchievement }
+        arguments: [ '@doctrine.orm.entity_manager', '%adfab.achievements.customer.fashion_lover.key%' ]

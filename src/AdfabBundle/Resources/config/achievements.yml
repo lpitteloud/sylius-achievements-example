@@ -1,0 +1,17 @@
+parameters:
+    adfab:
+        achievements:
+            customer:
+                fashion_lover:
+                    key: fashion_lover
+                    name: 'Fashion Lover'
+            order:
+                casual_shopper:
+                    key: casual_shopper
+                    name: 'Casual Shopper'
+                fashionista:
+                    key: fashionista
+                    name: 'Fashionista'
+                serial_shopper:
+                    key: serial_shopper
+                    name: 'Serial Shopper'
