@@ -62,9 +62,8 @@ fos_rest:
             - { path: '^/api', priorities: ['json', 'xml'], fallback_format: json, prefer_extension: true }
             - { path: '^/', stop: true }
 
-sylius_user:
+sylius_customer:
     resources:
-        shop:
-            user:
-                classes:
-                    model: AdfabBundle\Entity\User
+        customer:
+            classes:
+                model: AdfabBundle\Entity\Customer

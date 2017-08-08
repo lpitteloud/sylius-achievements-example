@@ -1,0 +1,5 @@
+parameters:
+    adfab.achievements.customer.fashion_lover: fashion_lover
+    adfab.achievements.order.casual_shopper: casual_shopper
+    adfab.achievements.order.fashionista: fashionista
+    adfab.achievements.order.serial_shopper: serial_shopper

@@ -3,10 +3,10 @@
 namespace AdfabBundle\Entity;
 
 /**
- * Interface AchievementUserInterface
+ * Interface AchievementCustomerInterface
  * @package AdfabBundle\Entity
  */
-interface AchievementUserInterface
+interface AchievementCustomerInterface
 {
     /**
      * @return int

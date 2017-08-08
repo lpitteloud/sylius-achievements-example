@@ -1,8 +1,0 @@
-AdfabBundle\Entity\User:
-    type: entity
-    table: sylius_shop_user
-    oneToMany:
-        achievements:
-            orderBy: { 'earnedAt': 'DESC' }
-            targetEntity: AdfabBundle\Entity\Achievement
-            mappedBy: user

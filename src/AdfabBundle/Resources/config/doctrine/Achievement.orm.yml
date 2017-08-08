@@ -14,9 +14,11 @@ AdfabBundle\Entity\Achievement:
             type: datetime
             nullable: false
     manyToOne:
-        user:
-            targetEntity: AdfabBundle\Entity\User
+        customer:
+            targetEntity: AdfabBundle\Entity\Customer
             inversedBy: achievements
             joinColumn:
-                name: user_id
+                name: customer_id
                 referencedColumnName: id
+    lifecycleCallbacks:
+        prePersist: [ setEarnedAtValue ]

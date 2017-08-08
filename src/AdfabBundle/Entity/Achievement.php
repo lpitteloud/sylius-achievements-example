@@ -2,6 +2,8 @@
 
 namespace AdfabBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Class Achievement
  * @package AdfabBundle\Entity
@@ -24,9 +26,9 @@ class Achievement
     private $earnedAt;
 
     /**
-     * @var User
+     * @var Customer
      */
-    private $user;
+    private $customer;
 
     /**
      * @return integer
@@ -36,6 +38,10 @@ class Achievement
         return $this->id;
     }
 
+    /**
+     * @param $name
+     * @return $this
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -44,7 +50,15 @@ class Achievement
     }
 
     /**
-     * @ORM\PrePersist
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * PrePersist event.
      */
     public function setEarnedAtValue()
     {
@@ -60,21 +74,21 @@ class Achievement
     }
 
     /**
-     * @param AchievementUserInterface $user
+     * @param AchievementCustomerInterface $customer
      * @return $this
      */
-    public function setUser(AchievementUserInterface $user)
+    public function setCustomer(AchievementCustomerInterface $customer)
     {
-        $this->user = $user;
+        $this->customer = $customer;
 
         return $this;
     }
 
     /**
-     * @return AchievementUserInterface
+     * @return AchievementCustomerInterface
      */
-    public function getUser()
+    public function getCustomer()
     {
-        return $this->user;
+        return $this->customer;
     }
 }

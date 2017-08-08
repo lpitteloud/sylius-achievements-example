@@ -1,0 +1,9 @@
+AdfabBundle\Entity\Customer:
+    type: mappedSuperclass
+    inheritanceType: SINGLE_TABLE
+    table: sylius_customer
+    oneToMany:
+        achievements:
+            orderBy: { 'earnedAt': 'DESC' }
+            targetEntity: AdfabBundle\Entity\Achievement
+            mappedBy: customer
