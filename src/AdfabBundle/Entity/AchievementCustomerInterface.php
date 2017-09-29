@@ -9,9 +9,10 @@ namespace AdfabBundle\Entity;
 interface AchievementCustomerInterface
 {
     /**
-     * @return int
+     * @param string $key
+     * @return bool
      */
-    public function getId();
+    public function earnedAchievement($key);
 
     /**
      * @return Achievement[]

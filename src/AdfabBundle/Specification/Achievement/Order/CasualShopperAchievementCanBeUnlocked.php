@@ -3,6 +3,7 @@
 namespace AdfabBundle\Specification\Achievement\Order;
 
 use AdfabBundle\Specification\SpecificationInterface;
+use Sylius\Component\Core\Model\CustomerInterface;
 
 class CasualShopperAchievementCanBeUnlocked implements SpecificationInterface
 {
@@ -12,6 +13,12 @@ class CasualShopperAchievementCanBeUnlocked implements SpecificationInterface
      */
     public function isSatisfiedBy($candidate)
     {
-        return true;
+        if ($candidate instanceof CustomerInterface) {
+            if ($candidate->getOrders()->count() === 1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
